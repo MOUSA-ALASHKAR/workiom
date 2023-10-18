@@ -1,11 +1,10 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/core/enums/connectivityStatus.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_project/core/translations/app_translations.dart';
 import 'package:flutter_project/core/utils/general_util.dart';
-import 'package:flutter_project/ui/views/splash_screen/splash_screen_view.dart';
+import 'package:flutter_project/ui/views/splash_screen/splash_screen.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
 
 class MyApp extends StatefulWidget {
@@ -26,10 +25,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider(
-        create: (context) => connectivityService.connectivityStatusController.stream,
-        initialData: ConnectivityStatus.ONLINE,
-        child: GetMaterialApp(
+
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+    return GetMaterialApp(
             defaultTransition: Transition.cupertino,
             transitionDuration: Duration(milliseconds: 300),
             translations: AppTranslation(),
@@ -40,12 +39,10 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(
-              primarySwatch: Colors.deepOrange,
               textTheme: TextTheme(),
             ),
 
-        home: SplashScreenView())
-    );
+        home: SplashScreen());
   }
 }
 

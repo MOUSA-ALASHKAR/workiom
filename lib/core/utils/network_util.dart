@@ -8,7 +8,7 @@ import 'package:mime/mime.dart';
 import 'package:http_parser/http_parser.dart';
 
 class NetworkUtil {
-  static String baseUrl = 'training.owner-tech.com';
+  static String baseUrl = 'api.workiom.site';
   static var client = http.Client();
 
   static Future<dynamic> sendRequest({
@@ -19,7 +19,7 @@ class NetworkUtil {
     Map<String, dynamic>? body,
   }) async {
     try {
-      var uri = Uri.https(baseUrl, url, params);
+      var uri = Uri.http(baseUrl, url, params);
       late http.Response response;
 
       Map<String, dynamic> jsonResponse = {};
@@ -72,7 +72,7 @@ class NetworkUtil {
     Map<String, dynamic>? params,
   }) async {
     try {
-      var request = http.MultipartRequest(type.name , Uri.https(baseUrl, url, params));
+      var request = http.MultipartRequest(type.name , Uri.http(baseUrl, url, params));
 
       var _filesKeyList = files!.keys.toList();
 

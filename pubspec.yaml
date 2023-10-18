@@ -42,17 +42,8 @@ dependencies:
   http: ^0.13.4
   dartz: ^0.10.1
   cached_network_image: ^3.2.3
-  image_picker: ^0.8.7+5
-  file_picker: ^5.2.9
   mime: ^1.0.4
   get: ^4.6.5
-  connectivity_plus: ^3.0.2
-  provider: ^6.0.5
-  location: ^5.0.0
-  geocoding: ^2.1.0
-  google_maps_flutter: ^2.3.0
-  firebase_core: ^2.13.0
-  firebase_messaging: ^14.6.1
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +66,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

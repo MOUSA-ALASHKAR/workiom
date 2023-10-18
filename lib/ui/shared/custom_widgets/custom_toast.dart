@@ -61,7 +61,7 @@ class CustomToast {
           children: [
             SvgPicture.asset('images/$imageName.svg' , width: screenWidth(5),  height: screenWidth(5),),
             SizedBox(height: screenWidth(15),),
-            Text(message , style: TextStyle(fontSize: screenWidth(12),),)
+            Text(message , style: TextStyle(fontSize: screenWidth(25),),textAlign: TextAlign.center,)
           ],
         ),
       );
